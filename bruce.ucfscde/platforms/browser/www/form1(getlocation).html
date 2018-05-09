@@ -1,0 +1,106 @@
+<!doctype html>
+<head>
+<title>This is a QUIZ!</title>
+<meta charset="utf-8">
+<style type="text/css">
+body,td,th {
+	color: #000;
+}
+</style>
+</head>
+<script src="./js/uploadData.js"> </script>
+<script src="./js/appActivity.js"> </script>
+<script>
+function getLocation2() {
+<!--alert('getting location');-->
+navigator.geolocation.getCurrentPosition(getPosition);
+}
+function getPosition(position) {
+document.getElementById('showLocation').innerHTML = "Latitude: " + position.coords.latitude +
+"<br>Longitude: " + position.coords.longitude; document.getElementById("lat").value = position.coords.latitude; document.getElementById("long").value = position.coords.longitude;
+}
+</script>
+<body>
+<h1> <code><em>This is a QUIZ!</em></code><em></em></h1>
+
+<div>
+
+
+<!--<label for="name">Name</label><input type="text" size="70" id="name"/><br />
+<label for="surname">Surname</label><input type="text" size="25" id="surname"/><br />
+<label for="module">Modul</label><input type="text" size="25" id="module"/><br />-->
+
+
+
+
+
+
+<p>Was UCL found in:</p>
+	A. 1826: <input type="radio" name="answer" id = check1 value="A"  /><br />
+	B. 1836: <input type="radio" name="answer" id = check2 value="B" /><br />
+	C. 1910: <input type="radio" name="answer" id = check3 value="C" /><br />
+	D. 1730: <input type="radio" name="answer" id = check4 value="D"  /><br />
+
+<!--<p>What is your first language?</p>
+<select name="languageselectbox" id="languageselectbox">
+	<option >English </option>
+	<option>Mandarin</option>
+	<option>Greek</option>
+	<option>Italian</option>
+	<option>Spanish</option>
+	<option>Other</option>
+    <label for="latitude">Latitude</label><input type="text" size="25" id="latitude"/><br />
+    <label for="longitude">Longitude</label><input type="text" size="25" id="longitude"/><br />
+    
+    -->
+
+</select>
+<br />
+<br />
+
+
+
+<!-- Try to get the location when it is summitted-->
+
+<b>Please Click this to show your location</b>
+<div id='showLocation'>Location will be displayed here</div>
+<button id="getLocation" onclick="getLocation2()">Click Me to Get Your Location</button>
+
+<p>Click here to upload the data</p>
+<button id="startUpload" onclick="startDataUpload()">Start Data Upload</button>
+<br />
+
+</div>
+
+
+<div id="dataUploadResult">
+  <p>The result of the upload goes here</p>
+</div>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<br>
+
+<label for="lattitude"><br>
+  
+<del><dfn>Lattitude</dfn></del></label>
+<input type="text" size="70" id="lat" disabled/><br />
+<label for="longitude"><dfn><del>Longitude</del></dfn></label>
+<input type="text" size="25" id="long" disabled/><br />
+
+</body>
+
