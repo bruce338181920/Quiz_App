@@ -24,7 +24,7 @@ var testMarkerPink = L.AwesomeMarkers.icon({
 		
 		
 // ***********************************
-// the functions
+// Track Location
 
 function trackLocation() {
     if (navigator.geolocation) {
@@ -148,4 +148,25 @@ if (xhr.readyState < 4)    {}                     // while waiting response from
             document.getElementById('ajaxtest').innerHTML = xhr.responseText;
     }
 }
+}
+
+//.............................
+// function to show the form - under construction
+
+<!-- Funtion for getting location Duplicated!!-->
+//function coordinate() {
+//<!--alert('getting location');-->
+//navigator.geolocation.getCurrentPosition(getPosition);
+//}
+//function getPosition(position) {
+//document.getElementById('showLocation').innerHTML = "Latitude: " + position.coords.latitude +
+//"<br>Longitude: " + position.coords.longitude; document.getElementById("lat").value = position.coords.latitude; document.getElementById("long").value = position.coords.longitude;
+//}
+
+<!-- Display the information uploaded -->
+function startDataUpload() {
+alert ("start data upload");
+var lattitude = document.getElementById("lat").value;
+var longitude = document.getElementById("long").value;
+alert("Coordinate " + " " + lattitude + " "+longitude);
 }

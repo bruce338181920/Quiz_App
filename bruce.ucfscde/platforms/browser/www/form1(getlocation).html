@@ -8,6 +8,18 @@ body,td,th {
 }
 </style>
 </head>
+<script src="./js/uploadData.js"> </script>
+<script src="./js/appActivity.js"> </script>
+<script>
+function getLocation2() {
+<!--alert('getting location');-->
+navigator.geolocation.getCurrentPosition(getPosition);
+}
+function getPosition(position) {
+document.getElementById('showLocation').innerHTML = "Latitude: " + position.coords.latitude +
+"<br>Longitude: " + position.coords.longitude; document.getElementById("lat").value = position.coords.latitude; document.getElementById("long").value = position.coords.longitude;
+}
+</script>
 <body>
 <h1> <code><em>This is a QUIZ!</em></code><em></em></h1>
 
@@ -52,7 +64,7 @@ body,td,th {
 
 <b>Please Click this to show your location</b>
 <div id='showLocation'>Location will be displayed here</div>
-<button id='getLocation' onclick='getLocation()'>Click Me to Get Your Location</button>
+<button id="getLocation" onclick="getLocation2()">Click Me to Get Your Location</button>
 
 <p>Click here to upload the data</p>
 <button id="startUpload" onclick="startDataUpload()">Start Data Upload</button>
@@ -82,8 +94,6 @@ body,td,th {
   <br>
   <br>
 <br>
-<script src="./js/uploadData.js"> </script>
-
 
 <label for="lattitude"><br>
   
@@ -94,22 +104,3 @@ body,td,th {
 
 </body>
 
-<script>
-<!-- Funtion for getting location -->
-function getLocation() {
-<!--alert('getting location');-->
-navigator.geolocation.getCurrentPosition(getPosition);
-}
-function getPosition(position) {
-document.getElementById('showLocation').innerHTML = "Latitude: " + position.coords.latitude +
-"<br>Longitude: " + position.coords.longitude; document.getElementById("lat").value = position.coords.latitude; document.getElementById("long").value = position.coords.longitude;
-}
-
-<!-- Display the information uploaded -->
-function startDataUpload() {
-alert ("start data upload");
-var lattitude = document.getElementById("lat").value;
-var longitude = document.getElementById("long").value;
-alert("Coordinate " + " " + lattitude + " "+longitude);
-}
-</script>

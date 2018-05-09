@@ -24,7 +24,7 @@ var testMarkerPink = L.AwesomeMarkers.icon({
 		
 		
 // ***********************************
-// the functions
+// Track Location
 
 function trackLocation() {
     if (navigator.geolocation) {
@@ -152,26 +152,21 @@ if (xhr.readyState < 4)    {}                     // while waiting response from
 
 //.............................
 // function to show the form - under construction
-var xhr; // define the global variable to process the AJAX request
-function callDivChange() {
-xhr = new XMLHttpRequest();
-var filename = document.getElementById("filename").value;
-xhr.open("GET", filename, true);
-xhr.onreadystatechange = processDivChange;
-try {
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-}
-catch (e) {
-// this only works in internet explorer
-}
-xhr.send();
-}
-function processDivChange() {
-if (xhr.readyState < 4) // while waiting response from server
-document.getElementById('div1').innerHTML = "Loading...";
-else if (xhr.readyState === 4) { // 4 = Response from server has been completely loaded.
-if (xhr.status == 200 && xhr.status < 300)
-// http status between 200 to 299 are all successful
-document.getElementById('div1').innerHTML = xhr.responseText;
-}
+
+<!-- Funtion for getting location Duplicated!!-->
+//function coordinate() {
+//<!--alert('getting location');-->
+//navigator.geolocation.getCurrentPosition(getPosition);
+//}
+//function getPosition(position) {
+//document.getElementById('showLocation').innerHTML = "Latitude: " + position.coords.latitude +
+//"<br>Longitude: " + position.coords.longitude; document.getElementById("lat").value = position.coords.latitude; document.getElementById("long").value = position.coords.longitude;
+//}
+
+<!-- Display the information uploaded -->
+function startDataUpload() {
+alert ("start data upload");
+var lattitude = document.getElementById("lat").value;
+var longitude = document.getElementById("long").value;
+alert("Coordinate " + " " + lattitude + " "+longitude);
 }
