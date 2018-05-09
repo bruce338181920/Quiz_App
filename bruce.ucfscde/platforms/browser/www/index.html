@@ -164,7 +164,9 @@
 <div><button id="myBtn">Open User Guide</button></div> <!--Button for opening the user guide-->
 
 
-<p>Was UCL found in:</p>
+<div id="demo">
+<p>Wait for the question</p></div>
+
 	A. 1826: <input type="radio" name="answer" id = "check1" value="A"  /><br />
 	B. 1836: <input type="radio" name="answer" id = "check2" value="B" /><br />
 	C. 1910: <input type="radio" name="answer" id = "check3" value="C" /><br />
@@ -211,7 +213,11 @@
 
 
 <div id="dataUploadResult">
-  <p>The result of the upload goes here</p>
+<p>The result of the upload goes here</p>
+</div>
+
+<div>
+<p id="demo"></p>
 </div>
 
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
@@ -276,6 +282,40 @@ mymap.on('click', onMapClick);
 //	mymap.setView([position.coords.latitude, position.coords.longitude], 13);
 //}
 //
+
+//////Try to get the question
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+		console.log(myObj);
+        document.getElementById("demo").innerHTML = myObj[0].question;
+    }
+};
+xmlhttp.open("GET", "http://developer.cege.ucl.ac.uk:30297/getbotq", true);
+xmlhttp.send();
+
+
+
+
+/*function getq () {
+var x;
+client = new XMLHttpRequest();
+client.open('GET', 'http://developer.cege.ucl.ac.uk:30297/getbotq', true)
+client.responseType = 'JSON';
+
+client.onload = function () {
+    if (client.readyState === client.DONE) {
+        if (client.status === 200) {
+            client.log(client.response);
+            client.log(client.responseText);
+        }
+    }
+};
+client.responseText = x;
+document.getElementById("thequestion").innerHTML = x;
+}*/
 </script>
 
 
@@ -375,6 +415,8 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+
 </script>
 
 </body>
