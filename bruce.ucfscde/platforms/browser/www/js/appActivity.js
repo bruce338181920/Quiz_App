@@ -126,29 +126,8 @@ function loadearthquakelayer(earthquakedata) {
     mymap.fitBounds(earthquakelayer.getBounds());
 }
 
-//*************************
-// functions to change the DIV content using AJAX - week 5
 
-var  xhr;  // define the global variable to process the AJAX request
-function callDivChange() {
 
-	 xhr = new XMLHttpRequest();
-
-	 // use an HTTP request here as Edge doesn't work with HTTPS over express
-	 xhr.open('GET', 'http://developer.cege.ucl.ac.uk:30297/testAJAX.html');
-	 xhr.onreadystatechange = processDivChange;
-	xhr.send();
-}  
-function processDivChange() {
-if (xhr.readyState < 4)    {}                     // while waiting response from server
-        //document.getElementById('ajaxtest').innerHTML = "Loading...";
-
-    else {
-		if (xhr.readyState === 4) {               // 4 = Response from server has been completely loaded.
-            document.getElementById('ajaxtest').innerHTML = xhr.responseText;
-    }
-}
-}
 
 //.............................
 // function to show the form - under construction
