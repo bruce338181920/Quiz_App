@@ -164,13 +164,16 @@
 <div><button id="myBtn">Open User Guide</button></div> <!--Button for opening the user guide-->
 
 
-<div id="demo">
-<p>Wait for the question</p></div>
+<div id="question"><p>Wait for the question</p></div>
+<div id="answera"><p>Wait</p></div>
+<div id="answerb"><p>Wait</p></div>
+<div id="answerc"><p>Wait</p></div>
+<div id="answerd"><p>Wait</p></div>
 
-	A. 1826: <input type="radio" name="answer" id = "check1" value="A"  /><br />
-	B. 1836: <input type="radio" name="answer" id = "check2" value="B" /><br />
-	C. 1910: <input type="radio" name="answer" id = "check3" value="C" /><br />
-	D. 1730: <input type="radio" name="answer" id = "check4" value="D"  /><br />
+	A. <input type="radio" name="answer" id = "check1" value="A"  /><br />
+	B. <input type="radio" name="answer" id = "check2" value="B" /><br />
+	C. <input type="radio" name="answer" id = "check3" value="C" /><br />
+	D. <input type="radio" name="answer" id = "check4" value="D"  /><br />
 
 <!--<p>What is your first language?</p>
 <select name="languageselectbox" id="languageselectbox">
@@ -290,14 +293,57 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var myObj = JSON.parse(this.responseText);
 		console.log(myObj);
-        document.getElementById("demo").innerHTML = myObj[0].question;
+        document.getElementById("question").innerHTML = myObj[0].question;
     }
 };
 xmlhttp.open("GET", "http://developer.cege.ucl.ac.uk:30297/getbotq", true);
 xmlhttp.send();
 
 
+///////Get Answer
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+		console.log(myObj);
+        document.getElementById("answera").innerHTML = myObj[0].answera;
+    }
+};
+xmlhttp.open("GET", "http://developer.cege.ucl.ac.uk:30297/lanswera", true);
+xmlhttp.send();
 
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+		console.log(myObj);
+        document.getElementById("answerb").innerHTML = myObj[0].answerb;
+    }
+};
+xmlhttp.open("GET", "http://developer.cege.ucl.ac.uk:30297/lanswerb", true);
+xmlhttp.send();
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+		console.log(myObj);
+        document.getElementById("answerc").innerHTML = myObj[0].answerc;
+    }
+};
+xmlhttp.open("GET", "http://developer.cege.ucl.ac.uk:30297/lanswerc", true);
+xmlhttp.send();
+
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var myObj = JSON.parse(this.responseText);
+		console.log(myObj);
+        document.getElementById("answerd").innerHTML = myObj[0].answerd;
+    }
+};
+xmlhttp.open("GET", "http://developer.cege.ucl.ac.uk:30297/lanswerd", true);
+xmlhttp.send();
 
 /*function getq () {
 var x;
